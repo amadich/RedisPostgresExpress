@@ -44,6 +44,20 @@ CREATE TABLE cartoons (
 
 Add sample data as needed.
 
+```sql
+INSERT INTO cartoons (name, release_year, genre, creator) VALUES
+('SpongeBob SquarePants', 1999, 'Comedy', 'Stephen Hillenburg'),
+('Avatar: The Last Airbender', 2005, 'Action/Adventure', 'Michael Dante DiMartino, Bryan Konietzko'),
+('Rugrats', 1991, 'Comedy', 'Arlene Klasky, Gábor Csupó, Paul Germain'),
+('The Fairly OddParents', 2001, 'Comedy', 'Butch Hartman'),
+('Danny Phantom', 2004, 'Action/Adventure', 'Butch Hartman'),
+('Hey Arnold!', 1996, 'Comedy', 'Craig Bartlett'),
+('Jimmy Neutron: Boy Genius', 2002, 'Comedy', 'John A. Davis'),
+('CatDog', 1998, 'Comedy', 'Peter Hannan'),
+('Rocket Power', 1999, 'Action/Adventure', 'Arlene Klasky, Gábor Csupó, Paul Germain'),
+('The Wild Thornberrys', 1998, 'Adventure', 'Arlene Klasky, Gábor Csupó, Steve Pepoon');
+```
+
 ---
 
 ## 📁 Project Structure
