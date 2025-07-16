@@ -1,0 +1,45 @@
+version: '3.9'
+
+services:
+  app:
+    build: .
+    container_name: node-backpack-app
+    ports:
+      - "3000:3000"
+    depends_on:
+      - postgres
+      - redis
+    environment:
+      - PGUSER=postgres
+      - PGPASSWORD=root
+      - PGHOST=postgres
+      - PGDATABASE=backpack
+      - PGPORT=5432
+      - REDIS_URL=redis://redis:6379
+    volumes:
+      - .:/usr/src/app
+    restart: unless-stopped
+
+  postgres:
+    image: postgres:15
+    container_name: postgres-db
+    ports:
+      - "5431:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: backpack
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+
+  redis:
+    image: redis:7
+    container_name: redis-server
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+
+volumes:
+  pg_data:
+  redis_data:
